@@ -1,4 +1,5 @@
-# Copyright 2016, 2022 John J. Rofrano. All Rights Reserved.
+######################################################################
+# Copyright 2016, 2021 John J. Rofrano. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,24 +12,14 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# pylint: disable=too-few-public-methods
+######################################################################
 
 """
-Test Factory to make fake objects for testing
+Utility package
+
+This package contains utility code that is not part
+of any particular application
 """
-import factory
-from factory.fuzzy import FuzzyChoice, FuzzyDecimal
-from service.models import Product, Category
+from .log_handlers import init_logging
 
-
-class ProductFactory(factory.Factory):
-    """Creates fake products for testing"""
-
-    class Meta:
-        """Maps factory to data model"""
-
-        model = Product
-
-    id = factory.Sequence(lambda n: n)
-   ## Add code to create Fake Products 
+__all__ = ('init_logging',)
